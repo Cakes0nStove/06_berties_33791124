@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>About <%=shopData.shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1>Cheap <%=shopData.shopName%> under £20:</h1>
+    <h1>Cheap Books:</h1>
+    <ul>
+      <% if (availableBooks && availableBooks.length > 0) { %>
+        <% availableBooks.forEach(book => { %>
+          <li><%= book.name %>, £<%= book.price %></li>
+        <% }); %>
+      <% } else { %>
+        <li>No books available at the moment.</li>
+      <% } %>
+    </ul>
+  </body>
+</html>

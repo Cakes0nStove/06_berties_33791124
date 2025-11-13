@@ -1,0 +1,7 @@
+to-do:
+
+0- add links.txt
+0- add a readme file
+0- comment your code as well
+0- make the list.ejs h1 font a different colour subtle
+0- complete the quiz
