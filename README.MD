@@ -1,18 +1,15 @@
-<h1>The Golden Cup</h1>
-A Node.js and Express.js web application built with EJS templates to showcase a drinks shop.
-The website includes pages for shop details, product listings, customer registration, and a customer survey.
+<h1>Bertie's Books</h1>
+A Node.js and Express.js web application built with EJS templates to showcase a book shop.
 
 <h2>Technologies Used:</h2>
 
-[![HTML5][HTML5-shield]][HTML5-url]
 [![CSS3][CSS3-shield]][CSS3-url]
 [![JavaScript][JavaScript-shield]][JavaScript-url]
 [![Node.js][NodeJS-shield]][NodeJS-url]
 [![Express.js][Express-shield]][Express-url]
 [![EJS][EJS-shield]][EJS-url]
 
-[HTML5-shield]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
-[HTML5-url]: https://developer.mozilla.org/en-US/docs/Glossary/HTML5
+
 
 [CSS3-shield]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
 [CSS3-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
@@ -73,7 +70,19 @@ GRANT ALL PRIVILEGES ON berties_books.* TO 'berties_books_app'@'localhost';
 FLUSH PRIVILEGES;
 
 ```
+3. Create a books table 
 
+```
+USE berties_books;
+
+CREATE TABLE IF NOT EXISTS books (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  price DECIMAL(6, 2) NOT NULL
+);
+
+```
+<h2>Route Description</h2>
 
 ---
 
