@@ -28,6 +28,11 @@ A Node.js and Express.js web application built with EJS templates to showcase a 
 
 
 19.	In a section called dotenv, briefly document how you have implemented this feature in your readme.md
+
+<h2>DotEnv</h2>
+Within this project, there is a .env file that consists of sensitive information that is mandatory too need in order to fun the project. 
+This information is protected through the .env which you can than utilise in the virtual machine.
+
 <h2>Set up Instructions</h2>
 
 ### 1. Initialize the Project
@@ -86,10 +91,12 @@ CREATE TABLE IF NOT EXISTS books (
 <h2>Route Description</h2>
 
 ---
-
-| Page              | Description                        |
-| ----------------- | ---------------------------------- |
-| 📘 List all books | Displays all books in the database |
-| ➕ Add a book      | Form to add a new book             |
-| 🔍 Search         | Search for books by name           |
-| 💸 Bargain books  | Shows books priced under £20       |
+| Page                  | Description                                                                     |
+| --------------------- | ------------------------------------------------------------------------------- |
+| 📘 **List all books** | Displays all books in the database                                              |
+| ➕ **Add a book**      | Form to add a new book                                                          |
+| 🔍 **Search**         | Search for books by name                                                        |
+| 💸 **Bargain books**  | Shows books priced under £20                                                    |
+| 🔑 **Login**          | Page where existing users enter email + password to access the system           |
+| 📝 **Register**       | Form page for new users to create an account (name, email, password)            |
+| 🕵️ **Audit Log**     | Secure page displaying all user login history (timestamps, usernames, IP, etc.) |
