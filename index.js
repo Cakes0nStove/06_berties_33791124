@@ -3,6 +3,7 @@ var express = require ('express')
 var ejs = require('ejs')
 var mysql = require('mysql2');
 const path = require('path')
+require('dotenv').config();
 
 // Create the express application object
 const app = express()
@@ -19,16 +20,15 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Define our application-specific data
 app.locals.shopData = {shopName: "Bertie's Books"}
+
 // Define the database connection pool
 const db = mysql.createPool({
-    host: 'localhost',
-    user: 'berties_books_app',
-    password: 'qwertyuiop',
-    database: 'berties_books',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0,
+    host: process.env.BB_HOST,
+    user: process.env.BB_USER,
+    password: process.env.BB_PASSWORD,
+    database: process.env.BB_DATABASE
 });
+
 global.db = db;
 
 // Load the route handlers

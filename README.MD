@@ -27,7 +27,7 @@ A Node.js and Express.js web application built with EJS templates to showcase a 
 [EJS-url]: https://ejs.co/
 
 
-
+19.	In a section called dotenv, briefly document how you have implemented this feature in your readme.md
 <h2>Set up Instructions</h2>
 
 ### 1. Initialize the Project
@@ -37,6 +37,7 @@ Open your terminal in the project folder and run:
 npm init
 npm install express
 npm install ejs
+npm install dotenv
 ```
 
 ### 2. Start the Server
