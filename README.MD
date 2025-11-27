@@ -43,6 +43,8 @@ npm init
 npm install express
 npm install ejs
 npm install dotenv
+npm install express-sanitizer
+npm install express-session
 ```
 
 ### 2. Start the Server
@@ -88,6 +90,24 @@ CREATE TABLE IF NOT EXISTS books (
 );
 
 ```
+### Sanitisation
+| Page                 | Why Sanitisation Is Applied                                     |
+| -------------------- | --------------------------------------------------------------- |
+| **Login / LoggedIn** | Cleans email + password inputs and prevents SQL injection.      |
+| **Add a Book**       | Ensures book name/price cannot contain harmful code or queries. |
+| **Register**         | Sanitises user details and prevents malicious input on signup.  |
+
+<h2>Page Access Control</h2>
+
+
+| Page                | Access Level    | Reason                                               |
+| ------------------- | --------------- | ---------------------------------------------------- |
+| **Audit**           | 🔴 Restricted   | Contains sensitive login history and system records. |
+| **List**            | 🔴 Restricted   | Displays user-specific or protected data.            |
+| **Logout**          | 🔴 Restricted   | Only available to authenticated users.               |
+| **All other pages** | 🟢 Unrestricted | Publicly accessible and safe without authentication. |
+
+
 <h2>Route Description</h2>
 
 ---

@@ -36,11 +36,11 @@ router.get('/list', (req, res, next) => {
 // Add new book
 router.post('/bookadded', (req, res, next) => {
     const sqlquery = "INSERT INTO books (name, price) VALUES (?,?)"
-    const newrecord = [req.body.name, req.body.price]
+    const newrecord = [req.sanitize(req.body.name), req.sanitize(req.body.price)]
 
     db.query(sqlquery, newrecord, (err) => {
         if (err) return next(err)
-        res.send(`This book is added to database, name: ${req.body.name} price ${req.body.price}`)
+        res.send(`This book is added to database, name: ${req.sanitize(req.body.name)} price ${req.sanitize(req.body.price)}`)
     })
 });
 
