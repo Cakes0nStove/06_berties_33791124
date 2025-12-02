@@ -20,7 +20,7 @@ router.get('/books/addbook',function(req, res, next){
 });
 
 router.get('/weather', function(req, res, next) {
-
+    res.set('Cache-Control', 'no-store');
     let city = req.query.city || 'london';
     let apiKey = process.env.API_KEY;
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
