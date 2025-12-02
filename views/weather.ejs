@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Search</title>
+    <link rel="stylesheet" type="text/css" href="/weather.css" />
+</head>
+<body>
+
+<div class="container">
+    <h1>Weather Search</h1>
+
+    <form action="/weather" method="GET">
+        <input type="text" name="city" placeholder="Enter city name..." required>
+        <button type="submit">Search</button>
+    </form>
+
+    <% if (error) { %>
+        <p class="error"><%= error %></p>
+    <% } %>
+
+    <% if (weatherData) { %>
+        <div class="weather-card">
+
+            <h2><%= weatherData.name %></h2>
+
+            <img class="icon" src="http://openweathermap.org/img/wn/<%= weatherData.icon %>@2x.png">
+
+            <div class="detail"><strong>Temperature:</strong> <%= weatherData.temp %>°C</div>
+            <div class="detail"><strong>Feels Like:</strong> <%= weatherData.feels_like %>°C</div>
+            <div class="detail"><strong>Condition:</strong> <%= weatherData.description %></div>
+            <div class="detail"><strong>Humidity:</strong> <%= weatherData.humidity %>%</div>
+            <div class="detail"><strong>Pressure:</strong> <%= weatherData.pressure %> hPa</div>
+            <div class="detail"><strong>Wind Speed:</strong> <%= weatherData.wind_speed %> m/s</div>
+
+        </div>
+    <% } %>
+</div>
+
+</body>
+</html>
