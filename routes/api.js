@@ -8,8 +8,7 @@ router.get('/books', function (req, res, next) {
     let search = req.query.search;
     let minPrice = req.query.minprice;
     let maxPrice = req.query.maxprice;
-    let sort = req.query.sort; // NEW
-
+    let sort = req.query.sort; 
     // BASE SQL
     let sqlquery = "SELECT * FROM books WHERE 1 = 1";
     let params = [];
