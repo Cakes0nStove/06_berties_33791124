@@ -43,7 +43,7 @@ router.post('/registered',
 
 
     // saving data in database
-    const plainPassword = req.sanitize(req.body.password);
+    const plainPassword = req.body.password;
     
     bcrypt.hash(plainPassword, saltRounds, function(err, hashedPassword) {
     if(err){
@@ -86,7 +86,7 @@ router.get('/list',redirectLogin, function (req, res, next) {
 
 router.post('/loggedin', function (req, res, next) {
     const username = req.sanitize(req.body.username);
-    const password = req.sanitize(req.body.password);
+    const password = req.body.password;
     // 1. Look up the user in the database
     const sqlquery = "SELECT * FROM users WHERE username = ?";
     db.query(sqlquery, [username], function(err, results) {
